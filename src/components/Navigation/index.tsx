@@ -19,6 +19,7 @@ const PrimaryUl = styled.ul`
   display: flex;
   align-items: center;
   gap: ${size(3)};
+  font-family: var(--font-secondary);
   @media (max-width: 900px) {
     display: none;
   }

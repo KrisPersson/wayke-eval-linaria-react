@@ -1,6 +1,7 @@
-import { css, styled } from "@linaria/core";
+import { css } from "@linaria/core";
+import { styled } from "@linaria/react";
+
 import { size } from "../../layout/helpers";
-import Image from "next/image";
 
 interface ICardBrandProps {
   imgSrc: string;
@@ -20,9 +21,7 @@ const cardBrandClass = css`
 
 const imgClass = css`
   grid-column: 1 / span 1;
-  align-self: center;
-  object-fit: contain;
-  object-position: center;
+  display: block;
 `;
 
 const infoBoxClass = css`
@@ -69,13 +68,7 @@ export default function CardBrand({
 }: ICardBrandProps) {
   return (
     <article className={cardBrandClass}>
-      <Image
-        width={64}
-        height={64}
-        src={imgSrc}
-        alt={imgAlt}
-        className={imgClass}
-      />
+      <img src={imgSrc} alt={imgAlt} className={imgClass} />
       <div className={infoBoxClass}>
         <div>
           <h3 className={h3Class}>{title}</h3>
@@ -90,11 +83,9 @@ export default function CardBrand({
           </div>
         </div>
       </div>
-      <Image
+      <img
         className={arrowIconClass}
         src="/icons/arrow-right.svg"
-        width={20}
-        height={20}
         alt="Arrow right icon"
         aria-hidden
       />

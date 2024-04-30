@@ -1,4 +1,6 @@
-import { css, styled } from "@linaria/core";
+import { styled } from "@linaria/react";
+import { css } from "@linaria/core";
+
 import { size } from "../../layout/helpers";
 import { IBreadcrumb } from "../../types/index";
 
@@ -14,12 +16,11 @@ const listClass = css`
   gap: ${size(0.5)};
 `;
 
-const CrumbLink = styled("a")({
-  color: "var(--c-text-secondary)",
-  textDecoration: ({ isactive }: IisActive) =>
-    isactive ? "none" : "underline",
-  cursor: ({ isactive }: IisActive) => (isactive ? "default" : "pointer"),
-});
+const CrumbLink = styled.a`
+  color: var(--c-text-secondary);
+  text-decoration: ${(props) => (props.isactive ? "none" : "underline")};
+  cursor: ${(props) => (props.isactive ? "default" : "pointer")};
+`;
 
 export default function Breadcrumbs({
   breadcrumbs,

@@ -1,7 +1,8 @@
-import { css } from "@linaria/core";
 import { styled } from "@linaria/react";
+import { css } from "@linaria/core";
 import Container from "../Container/index";
 import Navigation from "../Navigation/index";
+import { size } from "../../layout/helpers";
 
 const StyledHeader = styled.header`
   padding-top: 24px;
@@ -11,6 +12,14 @@ const StyledHeader = styled.header`
 const Inner = styled.div`
   display: flex;
   justify-content: space-between;
+  gap: ${size(2)};
+`;
+
+const imgClass = css`
+  @media (max-width: 370px) {
+    max-width: 120px;
+    height: auto;
+  }
 `;
 
 export default function Header() {
@@ -18,7 +27,7 @@ export default function Header() {
     <StyledHeader>
       <Container>
         <Inner>
-          <img src="/logo/wayke.svg" alt="Wayke logo" />
+          <img className={imgClass} src="/logo/wayke.svg" alt="Wayke logo" />
           <Navigation />
         </Inner>
       </Container>

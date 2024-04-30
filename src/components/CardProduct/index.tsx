@@ -1,6 +1,5 @@
 import { css } from "@linaria/core";
 import { size } from "../../layout/helpers";
-import Image from "next/image";
 
 interface ICardProductProps {
   imgSrc: string;
@@ -14,6 +13,7 @@ const cardProductClass = css`
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  position: relative;
 `;
 
 const imgWrapperClass = css`
@@ -22,20 +22,28 @@ const imgWrapperClass = css`
 `;
 
 const imgClass = css`
-  object-fit: cover;
-  object-position: center;
+  display: block;
 `;
 
 const infoBoxClass = css`
   display: flex;
   justify-content: space-between;
+  gap: ${size(2)};
   line-height: 1.4;
   padding: ${size(1.5)} ${size(1)};
 `;
 
-const h3Class = css`
+const titleClass = css`
   margin: 0;
   font-size: 1.25rem;
+  text-decoration: none;
+  color: var(--c-text-secondary);
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0px;
+  }
 `;
 
 const pClass = css`
@@ -54,26 +62,27 @@ export default function CardProduct({
   return (
     <article className={cardProductClass}>
       <div className={imgWrapperClass}>
-        <Image
-          width={426}
-          height={316}
-          src={imgSrc}
-          alt={imgAlt}
-          className={imgClass}
-        />
+        <img src={imgSrc} alt={imgAlt} className={imgClass} />
       </div>
       <div className={infoBoxClass}>
-        <div>
-          <h3 className={h3Class}>{title}</h3>
+        <div style={{ display: "flex", flexDirection: "column", gap: "2px" }}>
+          <a href="#" className={titleClass}>
+            {title}
+          </a>
           <p className={pClass}>
             {numListings} {numListings === 1 ? "annons" : "annonser"}
           </p>
         </div>
         <div style={{ textAlign: "right", margin: "auto 0" }}>
-          <p className={pClass} style={{ fontSize: "0.75rem" }}>
+          <p
+            className={pClass}
+            style={{ fontSize: "0.75rem", whiteSpace: "nowrap" }}
+          >
             Köp från
           </p>
-          <p className={pClass}>{lowestPrice} kr</p>
+          <p className={pClass} style={{ whiteSpace: "nowrap" }}>
+            {lowestPrice} kr
+          </p>
         </div>
       </div>
     </article>

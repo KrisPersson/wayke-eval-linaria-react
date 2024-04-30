@@ -1,11 +1,7 @@
-import { css } from "@linaria/core";
 import { styled } from "@linaria/react";
 
 const ContainerStyled = styled.div`
-  padding-inline: 20px;
-  @media (min-width: 1350px) {
-    padding-inline: 80px;
-  }
+  padding-inline: var(--gutter);
 `;
 
 export default function Container({

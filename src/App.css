@@ -1,6 +1,8 @@
 :root {
   --gutter: 20px;
   --subheader-gap: 32px;
+
+  --gutter-negative: calc(var(--gutter) * -1);
   
   --c-background-grey: rgba(246, 246, 246, 1);
   --c-foreground-grey: rgba(236, 236, 235, 1);
@@ -9,14 +11,25 @@
   --c-danger-red: rgba(246, 67, 43, 1);
   --c-base-white: rgba(255, 255, 255, 1);
   
-  --font-main: var(--font-open-sauce);
-  --font-secondary: var(--font-styrene);
+  --font-main: "Open Sauce One", sans-serif;
+  --font-secondary: "Styrene A", sans-serif;
   
   @media (min-width: 1350px) {
     --gutter: 80px;
   }
 }
 
+@font-face {
+  font-family: "Open Sauce One";   /*Can be any text*/
+  src: local("OpenSauceOne"),
+    url("./fonts/open-sauce-one/OpenSauceOne-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Styrene A";   /*Can be any text*/
+  src: local("styreneaweb-medium"),
+    url("./fonts/styreneaweb-medium/styreneaweb-medium.ttf") format("truetype");
+}
 
 html {
   box-sizing: border-box;
@@ -31,5 +44,5 @@ html {
 body {
   margin: 0 auto;
   max-width: 1600px;
+  font-family: var(--font-main);
 }
-

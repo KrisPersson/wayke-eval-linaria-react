@@ -1,7 +1,7 @@
-import { css, styled } from "@linaria/core";
+import { css } from "@linaria/core";
+import { styled } from "@linaria/react";
+
 import { size } from "../../layout/helpers";
-import Image from "next/image";
-import Link from "next/link";
 
 interface ICardTrialRunsProps {
   imgSrc: string;
@@ -12,40 +12,39 @@ interface ICardTrialRunsProps {
 const cardTrialRunsClass = css`
   display: flex;
   flex-direction: column;
-`
+`;
 
 const imgWrapperClass = css`
   overflow: hidden;
-`
+`;
 
 const imgClass = css`
-  align-self: center;
-  object-fit: cover;
-  object-position: center;
   border-radius: ${size(2.25)};
-`
+  display: block;
+`;
 
 const infoBoxClass = css`
   display: flex;
   justify-content: space-between;
   line-height: 1.33;
+  gap: ${size(1)};
   padding: ${size(1.5)} ${size(1)};
-`
+`;
 
 const h3Class = css`
   margin: 0;
   font-size: 1.25rem;
   line-height: 1.4;
-`
+`;
 
 const pClass = css`
   margin: 0;
   font-size: 0.75rem;
-`
+`;
 
 const arrowIconClass = css`
   align-self: center;
-`
+`;
 
 const showVideoClass = css`
   font-size: 0.75rem;
@@ -55,7 +54,7 @@ const showVideoClass = css`
   display: flex;
   align-items: center;
   gap: ${size(0.5)};
-`
+`;
 
 export default function CardTrialRuns({
   imgSrc,
@@ -65,13 +64,7 @@ export default function CardTrialRuns({
   return (
     <article className={cardTrialRunsClass}>
       <div className={imgWrapperClass}>
-        <Image
-          width={632}
-          height={250}
-          src={imgSrc}
-          alt={imgAlt}
-          className={imgClass}
-        />
+        <img src={imgSrc} alt={imgAlt} className={imgClass} />
       </div>
       <div className={infoBoxClass}>
         <div>
@@ -80,11 +73,9 @@ export default function CardTrialRuns({
         </div>
         <p className={showVideoClass}>
           Visa video
-          <Image
+          <img
             className={arrowIconClass}
             src="/icons/arrow-right.svg"
-            width={24}
-            height={24}
             alt="Arrow right icon"
             aria-hidden
           />

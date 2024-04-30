@@ -1,7 +1,7 @@
-import { styled } from "@linaria/core";
+import { styled } from "@linaria/react";
 import { size } from "../../layout/helpers";
 
-export const UlGrid = styled.ul`
+export const UlGrid = styled.div`
   min-width: 1280px;
   max-width: 1300px;
   display: grid;
