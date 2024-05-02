@@ -20,7 +20,8 @@ const innerClass = css`
 const headingClass = css`
   font-size: 3.5rem;
   margin: 0;
-  line-height: size(8);
+  line-height: ${size(8)};
+  font-weight: 800;
 `;
 
 const hrClass = css`

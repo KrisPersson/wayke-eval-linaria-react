@@ -12,6 +12,7 @@ interface ICardTrialRunsProps {
 const cardTrialRunsClass = css`
   display: flex;
   flex-direction: column;
+  position: relative;
 `;
 
 const imgWrapperClass = css`
@@ -31,10 +32,19 @@ const infoBoxClass = css`
   padding: ${size(1.5)} ${size(1)};
 `;
 
-const h3Class = css`
+const aClass = css`
   margin: 0;
   font-size: 1.25rem;
+  font-weight: 800;
   line-height: 1.4;
+  color: currentColor;
+  text-decoration: none;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0px;
+  }
 `;
 
 const pClass = css`
@@ -69,7 +79,9 @@ export default function CardTrialRuns({
       <div className={infoBoxClass}>
         <div>
           <p className={pClass}>Provkörning</p>
-          <h3 className={h3Class}>{title}</h3>
+          <a href="#" className={aClass}>
+            {title}
+          </a>
         </div>
         <p className={showVideoClass}>
           Visa video

@@ -16,7 +16,7 @@ const Inner = styled.div`
 `;
 
 const imgClass = css`
-  @media (max-width: 370px) {
+  @media (max-width: 390px) {
     max-width: 120px;
     height: auto;
   }

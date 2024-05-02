@@ -38,6 +38,7 @@ const titleClass = css`
   font-size: 1.25rem;
   text-decoration: none;
   color: var(--c-text-secondary);
+  font-weight: 800;
 
   &::before {
     content: "";

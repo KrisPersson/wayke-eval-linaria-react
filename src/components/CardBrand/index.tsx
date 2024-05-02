@@ -1,6 +1,5 @@
 import { css } from "@linaria/core";
 import { styled } from "@linaria/react";
-
 import { size } from "../../layout/helpers";
 
 interface ICardBrandProps {
@@ -17,11 +16,13 @@ const cardBrandClass = css`
   padding: ${size(2)};
   background: var(--c-base-white);
   border-radius: ${size(2.25)};
+  position: relative;
 `;
 
 const imgClass = css`
   grid-column: 1 / span 1;
   display: block;
+  align-self: center;
 `;
 
 const infoBoxClass = css`
@@ -37,9 +38,18 @@ const infoDataClass = css`
   margin-top: ${size(0.5)};
 `;
 
-const h3Class = css`
+const aClass = css`
   margin: 0;
   font-size: 1.25rem;
+  font-weight: 800;
+  text-decoration: none;
+  color: currentColor;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0px;
+  }
 `;
 
 const pClass = css`
@@ -71,7 +81,9 @@ export default function CardBrand({
       <img src={imgSrc} alt={imgAlt} className={imgClass} />
       <div className={infoBoxClass}>
         <div>
-          <h3 className={h3Class}>{title}</h3>
+          <a href="#" className={aClass}>
+            {title}
+          </a>
           <div className={infoDataClass}>
             <p className={pClass}>
               {numCars} {numCars === 1 ? "bil" : "bilar"}
