@@ -1,6 +1,4 @@
 import { css } from "@linaria/core";
-import { styled } from "@linaria/react";
-
 import { size } from "../../layout/helpers";
 
 interface ICardTrialRunsProps {

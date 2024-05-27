@@ -26,7 +26,7 @@ export default function AnchorLinks({
 }) {
   return (
     <div className={ulClass}>
-      {anchorLinks.map((link, i) => {
+      {anchorLinks.map((link) => {
         return (
           <a key={link.href} className={linkClass} href={link.href}>
             {link.label}

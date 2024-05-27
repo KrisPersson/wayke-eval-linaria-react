@@ -5,12 +5,6 @@ import { elbilar } from "./data/products";
 import { trademarks } from "./data/trademarks";
 import { provkorningar } from "./data/trial-runs";
 import { parsePrice } from "../../layout/helpers";
-import { css } from "@linaria/core";
-
-const linkClass = css`
-  color: var(--c-text-primary);
-  text-decoration: none;
-`;
 
 export const popModelsProducts = elbilar.popular.map((item, i: number) => {
   return (

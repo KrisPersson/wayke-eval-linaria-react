@@ -62,12 +62,12 @@ const arrowIconClass = css`
   align-self: center;
 `;
 
-const DotDivider = styled("div")({
-  width: "4px",
-  height: "4px",
-  borderRadius: "100vmax",
-  backgroundColor: "var(--c-text-secondary)",
-});
+const DotDivider = styled("div")`
+  width: 4px;
+  height: 4px;
+  border-radius: 100vmax;
+  background-color: var(--c-text-secondary);
+`;
 
 export default function CardBrand({
   imgSrc,

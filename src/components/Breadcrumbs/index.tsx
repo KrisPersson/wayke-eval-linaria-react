@@ -4,10 +4,6 @@ import { css } from "@linaria/core";
 import { size } from "../../layout/helpers";
 import { IBreadcrumb } from "../../types/index";
 
-interface IisActive {
-  isactive: boolean;
-}
-
 const listClass = css`
   padding-left: 0;
   margin: 0;
