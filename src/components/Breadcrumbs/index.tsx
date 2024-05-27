@@ -12,7 +12,7 @@ const listClass = css`
   gap: ${size(0.5)};
 `;
 
-const CrumbLink = styled.a`
+const CrumbLink = styled.a<{ isactive: boolean }>`
   color: var(--c-text-secondary);
   text-decoration: ${(props) => (props.isactive ? "none" : "underline")};
   cursor: ${(props) => (props.isactive ? "default" : "pointer")};
