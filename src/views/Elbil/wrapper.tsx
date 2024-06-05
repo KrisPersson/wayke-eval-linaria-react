@@ -5,12 +5,28 @@ export const GridListCardProducts = styled(UlGrid)`
   > * {
     grid-column: auto / span 4;
   }
+
+  @media (max-width: 1320px) {
+    display: flex;
+    flex-flow: row nowrap;
+
+    > * {
+      flex-shrink: 0;
+    }
+  }
 `;
 
 export const GridListCardBrands = styled(UlGrid)`
   > * {
     grid-column: auto / span 3;
   }
+  @media (max-width: 1320px) {
+    display: flex;
+    flex-flow: row nowrap;
+
+    > * {
+      flex-shrink: 0;
+    }
 `;
 
 export const GridListCardTrialRuns = styled(UlGrid)`

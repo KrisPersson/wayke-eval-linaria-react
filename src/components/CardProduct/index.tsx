@@ -23,6 +23,7 @@ const imgWrapperClass = css`
 
 const imgClass = css`
   display: block;
+  width: 415px;
 `;
 
 const infoBoxClass = css`
